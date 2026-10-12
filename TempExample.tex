@@ -1,0 +1,259 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  航空学报 LaTeX 模板（非官方） v2.0  示例文件
+%  依据《航空学报》新版 word 模板（2026年）调整
+%  编译：xelatex TempExample -> bibtex TempExample -> xelatex -> xelatex
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass{aaas}
+
+%% 示例中用到的颜色命令（模板说明文字中的红色、蓝色提示）
+\newcommand\mycolorRed[1]{{\color{red}#1}}
+\newcommand\mycolorBlue[1]{{\color{blue}#1}}
+%% 图片占位框：\figplaceholder{宽}{高}{说明}
+\newcommand\figplaceholder[3]{{\setlength\fboxsep{0pt}\setlength\fboxrule{.4bp}%
+  \fbox{\parbox[c][#2][c]{#1}{\centering\color{gray}#3}}}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  期刊信息（首页页眉、页脚，由编辑部给出）
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\JournalInfo{Jan. 25 2025 Vol.46 No.X}   % 首页页眉右侧
+\ArticleNo{XXXXXX}                       % 页脚“XXXXXX-页码”
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  首页：引用格式、题名、作者、单位、摘要、关键词
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\CiteFormat{张某, 吕某某, 诸葛某, 等．中文题名中文题名中文题名中文题名[J]．航空学报,
+  2025, 46(X): XXXXX．ZHANG M, LYU M M, ZHUGE M, et al. Title title title title
+  title title[J]. Acta Aeronautica et Astronautica Sinica, 2025, 46(X): XXXXX
+  (in Chinese). doi: 10.7527/S1000-6893.2025. XXXXX}
+
+\title{中文题名中文题名\aaasnote{\fontsize{9bp}{9bp}\selectfont(中文题名不超过20字)}}
+
+\author{张某\textsuperscript{1,*}，吕某某\textsuperscript{2}，诸葛某\textsuperscript{1}，欧阳某某\textsuperscript{1}}
+
+%% 单位：“1.”后、单位与学院之间空半个汉字，邮编前空一个汉字（\quad）
+\address{1.\hspace{.5em}南京航空航天大学\hspace{.5em}航空宇航学院，南京\quad 210016\\
+  2.\hspace{.5em}北京航空航天大学\hspace{.5em}航空科学与工程学院，北京\quad 100083\aaasnote{(投稿时请将作者姓名和单位删掉)}}
+
+\CAbstract{中文摘要中文摘要中文摘要中文摘要中文摘要中文摘要中文摘要中文摘要中文摘要中文摘要
+  中文摘要中文摘要中文摘要中文摘要中文摘要中文摘要中文摘要中文摘要中文摘要中文摘要
+  中文摘要中文摘要中文摘要中文摘要中文摘要中文摘要中文摘要中文摘要中文摘要中文摘要
+  中文摘要中文摘要中文摘要中文摘要中文摘要中文摘要中文摘要中文摘要中文摘要中文摘要
+  中文摘要中文摘要中文摘要中文摘要中文摘要中文摘要中文摘要中文摘要中文摘要中文摘要
+  中文摘要中文摘要中文摘要中文摘要中文摘要中文摘要中文摘要中文摘要中文摘要中文摘要
+  中文摘要中文摘要中文摘要中文摘要中文摘要中文摘要中文摘要中文摘要中文摘要中文摘要
+  中文摘要中文摘要中文摘要中文摘要中文摘要中文摘要中文摘要中文摘要中文摘要中文摘要。\aaasnote{(不少于200字，具体要求见3.1节)}}
+
+\CKeyword{关键词1；关键词2；关键词3；关键词4；关键词5 \aaasnote{(不少于5个，不多于8个)}}
+\CLCNo{\aaasnote{\fontsize{8bp}{8bp}\selectfont(自行查找，至少一个V字开头的)}}
+\Dcode{A}
+\PaperNo{1000-6893(2025)XX-XXXXX-XX}
+
+%% 首页脚注
+\ReceivedDate{2025-xx-xx}
+\RevisedDate{2025-xx-xx}
+\AcceptedDate{2025-xx-xx}
+\OnlineDate{}
+\OnlineURL{}
+\Foundation{国家自然科学基金(基金号)；航空科学基金(基金号) \aaasnote{\fontsize{7.5bp}{7.5bp}\selectfont(注：投稿时请将具体基金删掉，不要填写与研究内容无关的基金)}}
+\CorrEmail[\aaasnote{\fontsize{7.5bp}{7.5bp}\selectfont(注：投稿时请将具体邮箱删掉)}]{\mycolorRed{hkxb@buaa.edu.cn}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  英文摘要页（文末）
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ETitle{Title title title title title title title title title title title title}
+\EAuthor{ZHANG Mou\textsuperscript{1,*}, LU Moumou\textsuperscript{2}, ZHUGE Mou\textsuperscript{1},
+  OUYANG Moumou\textsuperscript{1}\aaasnote{\fontsize{8bp}{8bp}\selectfont(投稿时请将作者信息删除)}}
+\EAddress{1.~College of Aerospace Engineering, Nanjing University of Aeronautics and Astronautics,
+  Nanjing\quad 210016, China\\
+  2.~School of Aeronautic Science and Engineering, Beijing University , Beijing\quad 100083, China}
+\EAddressNote{\aaasnote{(注：请准确给出英文单位名称，具体可在下载中心“单位英文名称”查询，如发现所给英译文有误，欢迎指正)}}
+\EAbstract{The text of English abstracts. The text of English abstracts. The text of English abstracts.
+  The text of English abstracts. The text of English abstracts. The text of English abstracts.
+  The text of English abstracts. The text of English abstracts. The text of English abstracts.
+  The text of English abstracts. The text of English abstracts. The text of English abstracts.
+  The text of English abstracts. The text of English abstracts. The text of English abstracts.
+  The text of English abstracts. The text of English abstracts. The text of English abstracts.
+  The text of English abstracts. The text of English abstracts. The text of English abstracts.
+  The text of English abstracts. \aaasnote{\fontsize{8bp}{8bp}\selectfont(不少于150词，具体要求见3.2节)}}
+\EKeyword{keyword1; keyword2; keyword3; keyword4; keyword5 \aaasnote{\fontsize{8bp}{8bp}\selectfont(与中文关键词一一对应)}}
+\EFoundation{National Natural Science Foundation of China (*********) \aaasenote{(基金项目英文名称请查询下载中心“基金项目英文名称”)}}
+
+\RefNote{\aaasnote{\fontsize{9bp}{9bp}\selectfont\ (20条以上)}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%      文章正文
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+\maketitle
+
+《航空学报》严格执行科技出版的有关国家标准，如果作者返回的修改稿撰写不符合规范，特别是信息提供不完整，编辑部将联系作者答复、补正，这样常常费时费工也拖延文章出版。本文档简要介绍有关编辑出版规范和写作常识，请作者仔细阅读，认真执行，有不明白的欢迎来信来电咨询。您可直接在本文档的基础上撰写稿件，使文稿符合《航空学报》格式要求。如您已经写好文章想\mycolorRed{套用本文格式}，只需将正文复制到本模板相应位置，并使用模板提供的命令（见README）即可。
+
+\section{引言的说明}
+《航空学报》\mycolorRed{不在篇首编排变量符号表}，变量的含义解释请在正文中首次出现时给出。\mycolorRed{引言不编排节号，}应说明课题背景，引述该领域国内外同行已取得的最新进展，以说明选题意义和创新点所在\citeAAAS{BALL1998,FU2000}。\mycolorRed{内容不应与摘要和结论雷同。最好不要插图列表}\citeAAAS{WANG2005}。引言末尾简介要做的工作(及希望达到的效果)，勿直接给出结论性阐述。在论述研究意义时应注意分寸，切忌使用“有很高学术价值”“填补了国内外空白”“首次发现”等不适之词；同时也注意不要使用客套话，如“才疏学浅”“水平有限”“恳求指教”一类\citeAAAS{FU2000,CHEN1997,CARL1973,GB3100}。
+
+\section{题目、作者和单位}
+题目应简洁(中文题名不超过20个字)、准确，能恰如其分地概括研究的范围和深度，避免使用希腊字母和上下标，不能使用非公知公用的缩略词(尤其是作者自己定义的)；不影响语义的前提下，“研究”一般略去。英文题名中仅首个单词的首字母大写，其他均为小写。
+
+作者一般不超过5人，署名及署名排序应协商一致，本刊不承认共同一作/通讯，还请删去。姓名的英译采用汉语拼音，姓前名后，姓全大写，名仅首字母大写。如ZHANG Ying(张颖)、LYU Xilian(吕锡联)、ZHUGE Hua(诸葛华)
+
+单位一般著录到二级单位，应著录全称，单位名称的英译需注意与中文统一。
+
+\section{摘要和关键词}
+\subsection{中文摘要}
+中文摘要不少200个字，应完整，概括出文章的\mycolorRed{目的、方法、结果及结论}；简洁，排除常识内容，避免重复题目，背景介绍不超过一句话；独立，首次出现的缩略词应先给出全称，不引用参考文献、图和公式；具体，尽量用具体数字来说明该项工作取得的进展或成效，例如某项性能指标提高了百分之多少，避免“效果很好”等含糊其辞的表述；为便于收录，避免包含公式、变量、上下标等，以方便EI等文摘和题录数据库收录数据。高质量的摘要有利于文摘被国际权威数据库收录及引起同行的重视。用第3人称写作，建议采用“对……进行了研究”“报告了……现状”“进行了……调查”等记述方法，不使用“本文”“作者”等作为主语。
+
+\subsection{英文摘要}
+英文摘要\mycolorRed{应与中文摘要完全对应}。首次出现的缩略词应注意写明全称。
+
+\section{正\hspace{1em}文}
+\subsection{量、单位和公式}
+\label{labSecForm}
+简单变量符号可直接用文本给出，公式请使用Mathtype编辑，字号为10磅，上标/下标68\%，次下标上标42\%，符号150\%，次符号100\%(设置方法：Mathtype-尺寸-定义)。长公式如需转行，应在算符=、+、–等之后断开。
+\begin{equation}
+\label{eqnPsi}
+\psi = V_{\infty}\left(r-\frac{a^2}{r}\right)\sin\theta
+\end{equation}
+\noindent 式中：有关记号的使用应符合国家标准，如sin\textsuperscript{-1}应为arcsin，ctg应为cot，tg应为tan，不使用非国家法定单位，如ppm、rpm(应写为r/min)等；除\textit{Re}、\textit{Ma}(其中\textit{e}、\textit{a}不是下标)等几个特征数外，\mycolorRed{变量应使用单个斜体字母表示}(由多个字母表示单个变量易误解为多个变量相乘)，\mycolorRed{加下标以示区别}。
+
+\mycolorRed{矩阵、向量}请用\mycolorRed{加粗斜体}表示（如$\bm{A}$、$\bm{x}$），\mycolorRed{变量}用不加粗\mycolorRed{斜体}表示；\mycolorRed{下标字母}若为说明性的(如英文缩写)则用不加粗\mycolorRed{正体}表示，若为变量、坐标轴符号则用不加粗\mycolorRed{斜体}表示。所有文中出现的符号请另附文档说明其是标量或向量等，并说明各变量上下标的含义，以便编辑确定它们应采用的字体。
+
+《航空学报》一般不编排单独的符号表，对于公式中的变量含义需给出说明的，请在公式后的段落中，采用“\mycolorRed{式中：}\textit{A}为某某\mycolorRed{；}\textit{B}为某某\mycolorRed{；}……”的方式加以说明。
+
+\subsection{图、表}
+图、表同时编排中英文图题、表题(分图只需给出中文图题)；图表中首次出现的缩略词应给出全称，\mycolorRed{中文字原则上均用中文}；一般不超过8~cm宽。
+
+\subsubsection{图}
+函数曲线图统一用\mycolorRed{全框图}。\mycolorRed{注意检查横纵坐标的变量名}(使用国标变量符号，首次出现的变量符号要先在正文中给出解释)、\mycolorRed{单位}(复合单位如g/cm\textsuperscript{3}改为负一次方形式(g·cm\textsuperscript{–3})，与量名称用“/”隔开)、\mycolorRed{刻度值}(不少于3个，一般不超过4位数，否则应用词头n、μ、m、k、M或科学计数法简化，10\textsuperscript{\textit{n}}补在单位前，一并用括号括起，如(10\textsuperscript{4}~s))，不同线型或符号应给出图例说明，图例去底色、去框、不遮盖其他图像，图例中的数值应明确是哪一变量，框内放不下时图例可挪到图下给出；坐标轴刻度线朝内；应将软件中输出的图形直接插入文档，避免使用会降低图像精度的拷屏等方法。
+
+凡涉及地图，严格使用最新版标准地图，如自然资源部标准地图(http://bzdt.ch.mnr.gov.cn)并提供正确审图号。禁止使用来源不明、版本陈旧或自行制作拼接的地图。如有自制地图，需提交http://bzdt.ch.mnr.gov.cn审核并提供正确审图号。
+
+分图题放在对应分图下，不写在总图题中；不同分图的分图题不可完全一致；如果分图超过4个，则通栏排版（如图\ref{figCurves}，使用 figure* 环境）。单栏图见图\ref{figNephogram}。
+
+%% 示例中的图片位置用占位框代替，插入自己的图片时改为 \includegraphics，例如：
+%%   \includegraphics[width=160mm]{image/fig1.pdf}
+\begin{figure*}[t!]
+\centering
+\figplaceholder{160mm}{90mm}{通栏图（宽 160 mm）\\[2mm]分图题“(a) ……”放在对应分图下}\\
+\figplaceholder{116mm}{7mm}{图例}
+\bicaption[figCurves]{图}{曲线\aaasnote{(不同图的题目不可完全一致，需体现区别)}}{Fig.}{Curves \aaasnote{(注意中英文对应，仅第一个单词的首字母大写，the一般略去)}}
+\end{figure*}
+
+\begin{figure}[t!]
+\centering
+\figplaceholder{65mm}{43.3mm}{单栏图（宽 65 mm）}
+\bicaption[figNephogram]{图}{云图\aaasnote{(色标也需给出量名称和单位)}}{Fig.}{Nephogram}
+\end{figure}
+
+\subsubsection{表}
+请使用三线表。三线表的一般格式见表\ref{tabTab1}（顶线、底线1磅，栏目线0.5磅，表内文字小五号）。
+
+\begin{table}[htbp]
+\bicaption[tabTab1]{表}{表的题目}{Table}{English title}
+%% 列宽按 word 模板：三列分别占 31.36、31.21、16.43 mm（含两侧各 1.9 mm 单元格边距）
+\begin{tabular}{w{l}{27.55mm}w{l}{27.40mm}w{l}{12.62mm}}
+\toprule
+A密度\textit{ρ}\textsubscript{A}/(g·cm\textsuperscript{–3}) & B密度\textit{ρ}\textsubscript{B}/(g·cm\textsuperscript{–3}) & 质量/g \\
+\midrule
+208.1 & 208.5 & 313.6 \\
+208.2 &       & 293.2 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{计算、实验}
+文章以数值计算为主要内容的，应给出所求解的方程、重要的计算参数、初始或边界条件、难点问题的处理等，应对方法的适用性和计算精度估计有所说明；以实验为主要内容的，应说明实验设备、实验条件，对实验误差的估计等。便于同行重复再现所报道的内容，由于保密原因不便公开某些内容的，应向责任编辑说明。
+
+\section{参考文献}
+\subsection{总原则}
+引用文献应遵循“最新、关键、必要和亲自阅读过”的原则；应在\mycolorRed{正文中顺次引述}(按在正文中被提及的顺序编号，所有文献均需在正文中提及)；对于文献有多个作者的，只著录前3位作者，从第4位开始用“等”(英译文中用“et al\textit{.}”)代替；按表\ref{tabRefType}标识不同的参考文献类型；\mycolorRed{文献条数20条以上}。
+
+为便于国际交流，对英文文献按英文原文著录；预印本(arXiv、RePEc等)按数据库格式著录；\mycolorRed{对于中文(或其他非英文)文献先提供中文(原文种)著录，再提供其英译文，并在英译文后注“(in Chinese)”。}
+
+\begin{table}[htbp]
+\bicaption[tabRefType]{表}{参考文献类型}{Table}{Type of references}
+%% 列宽按 word 模板（四列约等宽，第 2、3 列之间为 0.5 磅双竖线；栏目线 0.75 磅）
+\begin{tabular}{w{l}{15.88mm}w{l}{15.74mm}!{\vrule width .5bp\hspace{.5bp}\vrule width .5bp\hspace{-.26mm}}w{l}{15.84mm}w{l}{16.04mm}}
+\toprule
+\tabcell{参考文献\\类型} & \tabcell{文献类型\\标识} & \tabcell{参考文献\\类型} & \tabcell{文献类型\\标识} \\
+\midrule[.75bp]
+专著       & M  & 学位论文 & D  \\
+会议录     & C  & 报告     & R  \\
+期刊       & J  & 标准     & S  \\
+报纸       & N  & 专利     & P  \\
+汇编       & G  & 数据库   & DB \\
+计算机程序 & CP & 电子公告 & EB \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{著录格式}
+1) 专著：[序号]\quad 编著者. 书名[M]. 译者. 版本. 出版地: 出版者, 出版年\mycolorRed{: 引用内容所在起止页码}.
+
+{\fontsize{9bp}{15.7bp}\selectfont 注：初版书不标注版本、译者。译者著录为：某某某, 译.\par}
+
+2) 期刊论文：[序号]\quad 作者. 题目[J]. 刊名, 年, 卷(期): 页码.
+
+3) 学位论文：[序号]\quad 作者. 题目[D]. 单位所在城市: 单位, 年\mycolorRed{: 引用内容所在起止页码}.
+
+4) 论文集、会议录：[序号]\quad 主要责任者. 题名[C]. 出版地: 出版者, 出版年.
+
+5) 论文集中析出的文献：[序号]\quad 作者. 题目[C]// 论文集名. 出版地: 出版者, 出版年: 页码.
+
+6) 科技报告：[序号]\quad 作者. 题名: 报告号[R]. 出版地: 出版者, 出版年.
+
+7) 国际/国家标准、行业规范：[序号]\quad 标准起草者. 标准名称: 标准编号[S]. 出版地: 出版者, 出版年.
+
+8) 专利：[序号]\quad 设计人. 专利题名: 专利号[P]. 公告日期(格式为2016-04-06).
+
+9) 联机电子公告：[序号]\quad 主要责任者. 题名[EB/OL]. 出版地: 出版者, 出版年. (更新日期) [引用日期]. 获取和访问路径.
+
+10) 数据库：[序号] 主要责任者. 题名[DB/OL]. 预印本数据库: 文献编号, 提交年份.
+
+有关示例请见文后参考文献部分\citeAAAS{LI1986,XIAO2001,JIANG2019,HUANG2015a,HUANG2015b}。\mycolorRed{著录时使用英文标点，标点后空一格。}
+
+\section{其他有关事项说明}
+1) 一般情况下，综述篇幅不超25页，参考文献不超150条；研究论文不超15页，参考文献不超过50条。应尽量引用最新及重要参考文献，避免涉及老旧及非必要文献。文章应着重撰写创新性、关键性内容，并以一般专业人员看得懂为原则。
+
+2) 返回时间：修改稿一般应在10天内返回，或以责任编辑的要求为准。如作者不能按时返回，请向责任编辑说明情况。
+
+3) 返回文件：论文电子版与“出版工作单”“\mycolorRed{变量符号表}”一起通过系统上传。稿件录用退修期间请仔细审读修改稿，\mycolorRed{录用退修阶段后不允许做大面积的文字润色等改动。}“出版工作单”中的有关事项请认真填写，收刊地址有变更的请及时通知责任编辑。
+
+4) 出版过程：责任编辑在编辑修改稿过程中常会有疑问请作者答复补正，请作者配合及时答复；编辑部有权对文章进行文字性修改，使之符合出版体例、规范要求和篇幅限制；稿件在排版并确定刊期后，将根据实际出版页码向第一及通讯作者邮箱中发送版面费通知单，作者应根据通知单要求及时交纳版面费；文章出版后，免费提供1本样刊，如需加购样刊应在“出版工作单”中注明，刊款随版面费一并缴纳。
+
+5) 提前发表：本刊一般发表周期为10个月，作者若有特殊情况确需要提前发表的，请在稿件录用后尽快联系责任编辑说明情况，以便根据实际情况适当安排。
+
+\section{结\hspace{1em}论}
+分点总结，只写结论，背景、方法不再赘述。
+
+1) 结论1结论1结论1结论1结论1结论1结论1结论1结论1结论1结论1结论1。
+
+2) 结论2结论2结论2结论2结论2结论2结论2结论2结论2结论2。
+
+\acknowledgments
+感谢某某。注意：作者和基金项目内涉及的内容此处不再重复。
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  参考文献（BibTeX，条目均用 misc 的 note 字段写出完整著录格式）
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\bibliographystyle{unsrt}
+\bibliography{TempExample}
+
+\Editor{\hspace{2em}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  附录（如有）：标题“附录A”，公式编号 (A1)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\appendix
+\section{}
+若确有特殊需要设附录的，附录部分置于参考文献列表后，标题为“附录A”“附录B”……。公式、图表用大写字母和数字顺序编号，例如“(A1)”“(A2)”“图A1”。
+\begin{equation}
+F = ma
+\end{equation}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  英文摘要页
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\makeEtitle
+
+\end{document}

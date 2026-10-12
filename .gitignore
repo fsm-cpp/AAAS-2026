@@ -1,0 +1,20 @@
+# LaTeX 编译中间文件
+*.aux
+*.bbl
+*.blg
+*.log
+*.out
+*.toc
+*.lof
+*.lot
+*.synctex.gz
+*.fdb_latexmk
+*.fls
+*.xdv
+# 变量符号说明表需要用到的辅助文件
+!Symbol/TempExample.aux
+# 示例图片取自期刊 word 模板，不上传
+image/
+# 其他
+.directory
+Thumbs.db
